@@ -10,13 +10,24 @@ function setup() {
 
 	
 }
+socket.on("weather", function (data) {
+    weath = data;
+})
 function nkarel(matrix) {
 	for (let y = 0; y < matrix.length; y++) {
 		for (let x = 0; x < matrix[y].length; x++) {
 			if (matrix[y][x] == 1) {
 				fill("green")
 
-			} else if (matrix[y][x] == 2) {
+			}else if (weath == "autumn") {
+                fill("#A05C00");
+            }else if (weath == "winter") {
+                fill("white");
+            }else if (weath == "spring") {
+                fill("#4DFF88");
+            }
+			
+			else if (matrix[y][x] == 2) {
 				fill("yellow")
 
 			} else if (matrix[y][x] == 3) {

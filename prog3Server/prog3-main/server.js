@@ -95,11 +95,25 @@ predatorArr = []
 cleanerArr = []
 creatorArr = []
 //modules
+
+var n = 50
+weath = "winter"
 Grass = require("./grass")
 GrassEater = require("./grasseter")
 Predator = require("./predator")
 Cleaner = require("./cleaner")
 Creator = require("./creator")
+
+function rand(min,max){
+	return Math.random() * (max - min) + min
+}
+for(let i = 0; i < n; i++){
+	matrix[i] = [];
+	for(let j = 0; j < n; j++){
+		matrix[i][j] = Math.floor(rand(0,3))
+	}
+}
+io.sockets.emit("send matrix", matrix)
 
 function createObject(matrix){
     for (let y = 0; y < matrix.length; y++) {
@@ -166,7 +180,22 @@ setInterval(game,200)
 
 
 
-
+function weather() {
+	if (weath == "winter"){
+		weath = "spring"
+	}
+	else if (weath == "spring"){
+		weath = "summer"
+	}
+	else if (weath == "summer"){
+		weath = "autumn"
+	}
+	else if (weath == "autumn"){
+		weath = "winter"
+	}
+	io.sockets.emit('weather', weath)
+}
+setInterval(weather, 5000)
 io.on('connection',function(){
     createObject(matrix)
 })

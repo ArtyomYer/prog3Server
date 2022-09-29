@@ -1,4 +1,3 @@
-let LivingCreature = require("./LeavingCreature")
 
 module.exports = class LivingCreature {
     constructor(x, y) {
