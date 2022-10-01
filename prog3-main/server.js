@@ -104,16 +104,7 @@ Predator = require("./predator")
 Cleaner = require("./cleaner")
 Creator = require("./creator")
 
-function rand(min,max){
-	return Math.random() * (max - min) + min
-}
-for(let i = 0; i < n; i++){
-	matrix[i] = [];
-	for(let j = 0; j < n; j++){
-		matrix[i][j] = Math.floor(rand(0,3))
-	}
-}
-io.sockets.emit("send matrix", matrix)
+
 
 function createObject(matrix){
     for (let y = 0; y < matrix.length; y++) {

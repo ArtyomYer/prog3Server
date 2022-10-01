@@ -44,9 +44,10 @@ module.exports = class Cleaner extends LivingCreature {
 	}
 	mul() {
 		this.multiply++;
-		var emptyCells = super.chooseCell(0,1,2,3);
+		var emptyCells = this.chooseCell(0,1,2,3);
 		var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
-		console.log(emptyCells);
+
+		
 		if (newCell && this.multiply >= 100) {
 			var newX = newCell[0];
 			var newY = newCell[1];
@@ -60,11 +61,11 @@ module.exports = class Cleaner extends LivingCreature {
 	
 	move() {
 		this.energy--
-		var emptyCells = super.chooseCell(0,1,2,3);
+		var emptyCells = this.chooseCell(0,1,2,3)
 		var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
 
 		if (newCell && this.energy >= 0) {
-			console.log(newCell)
+			
 			var newX = newCell[0]
 			var newY = newCell[1]
 			matrix[newY][newX] = matrix[this.y][this.x]

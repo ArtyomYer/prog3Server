@@ -5,7 +5,6 @@ let side = 20;
 
 
 function setup() {
-	frameRate(9)
 	createCanvas(35 * side,35 * side)
 
 	
@@ -13,6 +12,8 @@ function setup() {
 socket.on("weather", function (data) {
     weath = data;
 })
+
+
 function nkarel(matrix) {
 	for (let y = 0; y < matrix.length; y++) {
 		for (let x = 0; x < matrix[y].length; x++) {
