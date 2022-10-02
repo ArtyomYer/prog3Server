@@ -19,19 +19,23 @@ function nkarel(matrix) {
 		for (let x = 0; x < matrix[y].length; x++) {
 			if (matrix[y][x] == 1) {
 				fill("green")
+				
+				 if (weath == "autumn") {
+					fill("#A05C00");
+				}else if (weath == "winter") {
+					fill("white");
+				}else if (weath == "spring") {
+					fill("#4DFF88");
+				}
+				
+				else if (matrix[y][x] == 2) {
+					fill("yellow")
+	
+				}
 
-			}else if (weath == "autumn") {
-                fill("#A05C00");
-            }else if (weath == "winter") {
-                fill("white");
-            }else if (weath == "spring") {
-                fill("#4DFF88");
-            }
+			}
 			
-			else if (matrix[y][x] == 2) {
-				fill("yellow")
-
-			} else if (matrix[y][x] == 3) {
+			else if (matrix[y][x] == 3) {
 				fill("red")
 
 			} else if (matrix[y][x] == 4){
@@ -59,3 +63,21 @@ setInterval(
 
 	},1000
 )
+function kill() {
+    socket.emit("kill")
+}
+function addGrass() {
+    socket.emit("add grass")
+}
+function addGrassEater() {
+    socket.emit("add grassEater")
+}
+function addPredator() {
+    socket.emit("add Predator")
+}
+function addCleaner() {
+    socket.emit("add Cleaner")
+}
+function addCreator() {
+    socket.emit("add Creator")
+}

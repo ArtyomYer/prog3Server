@@ -1,4 +1,8 @@
 let LivingCreature = require("./LeavingCreature")
+let Grass  = require("./grass")
+let GrassEater  = require("./grasseter")
+let Predator  = require("./predator")
+let Cleaner = require("./cleaner")
 module.exports = class Creator extends LivingCreature {
 	constructor(x, y) {
 		super (x,y)
