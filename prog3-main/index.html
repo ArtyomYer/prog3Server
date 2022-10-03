@@ -10,55 +10,42 @@
 	<script src = "/socket.io/socket.io.js"></script>
 	<link rel="stylesheet" href="mystyle.css">
 </head>
-node server
+
 
 <body>
 	<div class="Game-Of-Life">
 	Game-Of-Life
 	</div>
-	<div style="color: green;" class="Grass">Grass</div>
-	<div class="GrText">Խոտ - բազմանում է մոտակա 8 վանդակներում</div>
-	<div style="color: yellow;" class="GrassEater">GrassEater</div>
+	<!-- <div href="#" class="btn-flip" data-back="Խոտ - բազմանում է մոտակա 8 վանդակներում" data-front="Grass"></div> -->
+	<!-- <div class="GrText">Խոտ - բազմանում է մոտակա 8 վանդակներում</div>
+	<div class="GrassEater">GrassEater</div>
 	<div class="GrEatText">Խոտակեր - ապրում է խոտեր ուտելով, </br> մեռնում է երբ էներգիան(8) հասնում է
 		0ի </div>
-	<div style="color: red;" class="Predator" >Predator</div>
+	<div class="Predator" >Predator</div>
 	<div class="PrText">Գիշատիչ - ուտում է խոտակերներին ,</br> մեռնում է երբ էներգիան(8) հասնում է
 		0ի </div>
-	<div style="color: purple;" class="Cleaner">Cleaner</div>
+	<div class="Cleaner">Cleaner</div>
 	<div class="ClText">Մաքրող ռումբ - վերացնում է ամեն ինչ խաչաձեւ</br> երբ էներգիան(100) հասնում է
 		0ի </div>
-	<div style="color: blue;" class="Creator">Creator</div>
+	<div class="Creator">Creator</div>
 	<div class="CRText">Արարիչ - ստեղծում է վերը նշված կերպարները </br>կախված կյանքի տեվողությունից</div>
-	<div class="Info" style="color: rgba(0, 49, 128, 0.854);">Programming 2 <br> 05.2022</div>
-	<div class="InfoN" style="color: rgba(0, 49, 128, 0.854);">Artyom Yeranosian</div>
-	
+	 -->
 
 	
 
 	
-	<div class = "tools">
-		<h1 style="color:yellowgreen">Events</h1>
-        <ul>
-            <li>
-                <button onclick="kill()">Kill them all</button>
-            </li>
-            <li>
-                <button onclick="addGrass()">Add grass</button>
-            </li>
-            <li>
-                <button onclick="addGrassEater()">Add grass eater</button>
-            </li>
-			<li>
-                <button onclick="addPredator()">Add predator</button>
-            </li>
-			<li>
-                <button onclick="addCleaner()">Add cleaner</button>
-            </li>
-			<li>
-                <button onclick="addCreator()">Add creator</button>
-            </li>
-        </ul>
-	</div>
+	
+	<button class="kill" type="button" onclick="kill()">Kill them all</button><br><br><br><br>
+	<button class="addGrass" type="button" onclick="addGrass()">Add Grass</button><br><br><br><br>
+	<button class="addGrassEater" type="button" onclick="addGrassEater()">Add Grass Eater</button><br><br><br><br>
+	<button class="addPredator" type="button" onclick="addPredator()">Add Predator</button><br><br><br><br>
+	<button class="addCleaner" type="button" onclick="addCleaner()">Add Cleaner</button><br><br><br><br>
+	<button class="addCreator" type="button" onclick="addCreator()">Add Creator</button><br><br><br><br>
+	<button class="changeWeather" type="button" onclick="changeWeather()">Change Weather</button>
+
+	<div id = "grassS"></div>
+
+
 	<script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
 	<script src="script.js"></script>
 </body>

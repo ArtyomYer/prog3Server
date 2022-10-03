@@ -4,6 +4,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 var fs = require("fs");
+const { SocketAddress } = require('net');
 const Cleaner = require('./cleaner');
 const Creator = require('./creator');
 const Predator = require('./predator');
@@ -243,6 +244,21 @@ function addCreator() {
     io.sockets.emit("send matrix", matrix);
 
 }
+function changeWeather(){
+	if (weath == "winter"){
+		weath = "spring"
+	}
+	else if (weath == "spring"){
+		weath = "summer"
+	}
+	else if (weath == "summer"){
+		weath = "autumn"
+	}
+	else if (weath == "autumn"){
+		weath = "winter"
+	}
+	io.sockets.emit('changeWeather', weath)
+}
 
 function weather() {
 	if (weath == "winter"){
@@ -270,6 +286,7 @@ io.on('connection', function (socket) {
 	socket.on("add Predator", addPredator);
 	socket.on("add Cleaner", addCleaner);
 	socket.on("add Creator", addCreator);
+	socket.on("change Weather",changeWeather)
 })
 
 

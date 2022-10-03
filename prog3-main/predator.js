@@ -2,7 +2,7 @@ let LivingCreature = require("./LeavingCreature")
 module.exports = class Predator extends LivingCreature{
 	constructor(x, y) {
 		super(x, y)
-		this.energy = 10;
+		this.energy = 8;
 		this.multiply = 0
 		this.directions = [];
 	}
@@ -23,6 +23,7 @@ module.exports = class Predator extends LivingCreature{
 			predatorArr.push(pre);
 			this.multiply = 0;
 		}
+		
 	}
 
 	move() {

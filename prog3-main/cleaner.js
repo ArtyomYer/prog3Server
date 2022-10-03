@@ -57,6 +57,7 @@ module.exports = class Cleaner extends LivingCreature {
 			cleanerArr.push(cl);
 			this.multiply = 0;
 		}
+		
 	}
 	
 	move() {

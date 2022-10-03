@@ -44,6 +44,7 @@ module.exports = class Creator extends LivingCreature {
 			creatorArr.push(cre);
 			this.multiply = 0;
 		}
+		
 	}
 	move() {
 		this.energy--

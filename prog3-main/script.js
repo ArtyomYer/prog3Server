@@ -28,13 +28,13 @@ function nkarel(matrix) {
 					fill("#4DFF88");
 				}
 				
-				else if (matrix[y][x] == 2) {
-					fill("yellow")
-	
-				}
+				
 
 			}
-			
+			else if (matrix[y][x] == 2) {
+				fill("yellow")
+
+			}
 			else if (matrix[y][x] == 3) {
 				fill("red")
 
@@ -81,3 +81,7 @@ function addCleaner() {
 function addCreator() {
     socket.emit("add Creator")
 }
+function changeWeather() {
+    socket.emit("change Weather")
+}
+;
