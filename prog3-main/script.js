@@ -33,16 +33,44 @@ function nkarel(matrix) {
 			}
 			else if (matrix[y][x] == 2) {
 				fill("yellow")
+				if (weath == "autumn") {
+					fill("#AEAE1F");
+				}else if (weath == "winter") {
+					fill("#737312");
+				}else if (weath == "spring") {
+					fill("#E5E562");
+				}
 
 			}
 			else if (matrix[y][x] == 3) {
 				fill("red")
+				if (weath == "autumn") {
+					fill("#C61212");
+				}else if (weath == "winter") {
+					fill("#840000");
+				}else if (weath == "spring") {
+					fill("#E56262");
+				}
 
 			} else if (matrix[y][x] == 4){
 				fill("purple")
+				if (weath == "autumn") {
+					fill("#9F40AB");
+				}else if (weath == "winter") {
+					fill("#822A8D");
+				}else if (weath == "spring") {
+					fill("#E56262");
+				}
 
 			} else if (matrix[y][x] == 5){
 				fill("blue")
+				if (weath == "autumn") {
+					fill("#0687C7");
+				}else if (weath == "winter") {
+					fill("#056493");
+				}else if (weath == "spring") {
+					fill("#459BC5");
+				}
 
 			}else {
 				fill("gray")
@@ -84,4 +112,3 @@ function addCreator() {
 function changeWeather() {
     socket.emit("change Weather")
 }
-;
